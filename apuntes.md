@@ -16,7 +16,7 @@ git status
 
 git log
 
-# La sintaxis básica de Git es program | action | destin ation.
+# La sintaxis básica de Git es program | action | destination.
 Por ejemplo,
 
 git add .se lee como git | add | ., donde el punto representa todo en el directorio actual;

@@ -1,2 +1,0 @@
-# odin
-Hello World

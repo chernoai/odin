@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#header {
+  background: #1f2937;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+  width: 100%;
+  padding: 15px;
+  position: fixed;
+  background: #1f2937;
+  top: -10px;
+}
+.nav--ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-right: 25px;
+}
+img {
+  width: 40px;
+  justify-self: self-start;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #e5e7eb;
+  font-size: 23px;
+}
+
+.pre-info {
+  margin-top: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 47px;
+  background: #1f2937;
+  color: #e5e7eb;
+}
+.left {
+  width: 50%;
+}
+.left > p {
+  font-size: 12px;
+}
+.right {
+  margin-left: 28px;
+  width: 50%;
+  background: #6d747d;
+}
+.signup-btn {
+  margin-top: 8px;
+  width: 100px;
+  height: 30px;
+  background: #3882f6;
+  border: none;
+  border-radius: 7px;
+}
+#main {
+  margin: 32px 0;
+}
+#main > h2 {
+  text-align: center;
+}
+.information {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.box img {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #3882f6;
+  border-radius: 7px;
+}
+.box p {
+  width: 100px;
+  text-align: center;
+}
+.cite {
+  background: #e5e7eb;
+  padding: 26px;
+  padding-bottom: 5px;
+}
+
+.author {
+  text-align: right;
+}
+.text > * {
+  padding: 0;
+  margin: 5px;
+}
+.sign-up {
+  margin: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #3882f6;
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.sign-up > .signup-btn {
+  border: 2px solid #e5e7eb;
+  color: #e5e7eb;
+}
+
+#footer {
+  background: #1f2937;
+  padding: 20px;
+  text-align: center;
+  color: #e5e7eb;
+}

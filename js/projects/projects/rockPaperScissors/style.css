@@ -21,9 +21,9 @@ table {
 }
 
 th {
-  border: 3px solid #000; /* Borde de las celdas */
   padding: 8px;
   width: 35px;
+  border: 3px solid #000; /* Borde de las celdas */
   font-family: "Press Start 2P", cursive;
 }
 
@@ -38,8 +38,8 @@ th {
   background: #ace97e;
 }
 .buttons {
-  background: #e9bb7e;
   width: 399px;
+  background: #e9bb7e;
   border: 3px solid #000;
 }
 .button {
@@ -59,4 +59,11 @@ th {
   font-weight: 900;
   width: 399px;
   height: 140px;
+}
+
+.end {
+  text-align: center;
+  color: #ffff;
+
+  font-size: 30px;
 }

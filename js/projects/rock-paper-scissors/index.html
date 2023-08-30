@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content"></div>
+    <div class="tab">
+      <table>
+        <tr>
+          <th>PLAYER</th>
+          <th class="cellScorePlayer"></th>
+          <th class="cellScorePlayer"></th>
+          <th class="cellScorePlayer"></th>
+          <th class="cellScorePlayer"></th>
+          <th class="cellScorePlayer"></th>
+        </tr>
+        <tr class="cellComputer">
+          <th>COMPUTER</th>
+          <th class="cellScoreComputer"></th>
+          <th class="cellScoreComputer"></th>
+          <th class="cellScoreComputer"></th>
+          <th class="cellScoreComputer"></th>
+          <th class="cellScoreComputer"></th>
+        </tr>
+      </table>
+    </div>
+    <div class="video">
+      <video class="loop" autoplay>
+        <source src="./source/loop.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="buttons">
+      <img class="button" id="rock" src="./source/rock.png" alt="">
+      <img class="button" id="paper" src="./source/paper.png" alt="">
+      <img class="button" id="scissors" src="./source/scis.png" alt="">
+    </div>
+  </div>
+  <script src="code.js"></script>
+</body>
+</html>

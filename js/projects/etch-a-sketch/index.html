@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etch-a-Sketch</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js"></script>
+
+</head>
+
+<body>
+  <h1>Etch-a-Sketch</h1>
+  <div class="container">
+    <div class="settings">
+      <label for="color">COLOR
+        <input type="color" class="color">
+      </label>
+      <button class="rainbow-btn">RAINBOW</button>
+      <button class="eraser-btn">ERASER</button>
+      <button class="clear-btn">CLEAR</button>
+    </div>
+    <table class="canvas">
+    </table>
+  </div>
+  <script>
+    const table = document.querySelector("table");
+    const numRows = 25;
+    const numCols = 27;
+
+    for (let i = 0; i < numRows; i++) {
+      const row = document.createElement("tr");
+      for (let j = 0; j < numCols; j++) {
+        const cell = document.createElement("td");
+        row.appendChild(cell);
+      }
+      table.appendChild(row);
+    }
+  </script>
+  <script src="code.js">
+  </script>
+</body>
+
+</html>

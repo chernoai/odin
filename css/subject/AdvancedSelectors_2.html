@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Selector</title>
+  <style>
+    /* PSEUDOELEMENTOS:
+    Nos permiten afectar partes de nuestro HTML que no son elementos en absoluto. Estos elementos especiales comparten la misma especificidad que los elementos regulares (0, 0, 0, 1). */
+
+
+    /* "::marker ":le permite personalizar el estilo de <li>las viñetas o números de sus elementos. */
+    li::marker {
+      content: "\2022";
+      /* Usar un círculo como viñeta */
+      color: #FF5733;
+      /* Cambiar el color de la viñeta */
+    }
+
+    /* "::selection": ::selection se utiliza para cambiar el resaltado cuando un usuario selecciona texto en la página. */
+    ::selection {
+      background-color: #ffd700;
+      /* Cambiar el color de fondo de la selección */
+      color: #000;
+      /* Cambiar el color del texto seleccionado */
+    }
+
+    /* "::before y ::after": ::before y ::after permiten agregar elementos adicionales a la página con CSS en lugar de HTML. Se utilizan comúnmente para decorar texto de diversas formas.*/
+    ul::before {
+      content: '😎';
+      /* Agregar un emoji antes del párrafo */
+    }
+
+    ul::after {
+      content: "🤓";
+      /* Agregar un texto después de los enlaces externos */
+      color: #007bff;
+    }
+
+    /* SELECTORES DE ATRIIBUTOS */
+
+    /* [attribute]: El selector [attribute] seleccionará cualquier elemento donde exista el atributo especificado. El valor del atributo no importa. */
+
+    [class] {
+      text-decoration: underline;
+      /* Subrayar enlaces con el atributo 'target' */
+    }
+
+    /* selector[attribute]: Puedes combinar selectores de atributos con otros selectores, como selectores de clases o de elementos, para ser más específico en la selección. */
+
+    div[id] {
+      color: #007bff;
+    }
+
+
+    /* [attribute="value"]: Para ser específicos, podemos usar = para hacer coincidir un atributo específico con un valor específico. */
+
+    input[type="text"] {
+      background-color: #444;
+      /* Estilizar campos de entrada de texto */
+    }
+
+
+    /* [attribute^="value"]: [attribute^="value"] coincide con elementos que tengan un atributo específico cuyo valor comienza con una cadena específica. */
+
+    div[class^="grand"] {
+      border: 2px solid #00c853;
+    }
+
+    /* [attribute$="value"]: [attribute$="value"] coincide con elementos que tengan un atributo específico cuyo valor termina con una cadena específica. */
+
+    div[class$="2"] {
+      color: #f55;
+    }
+
+    /* *[attribute="value"]**: [attribute*="value"] es un selector comodín que coincide con elementos que tengan un atributo específico con una cadena específica en cualquier  */
+
+    div > div[class*="ild"] {
+      background-color: #f7d794;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="parent">
+    <a href="#">Hola</a>
+    <button>hola mundo</button>
+    <div class="child group1">
+      Lorem Ipsum
+      <div class="grand-child group1" id="#">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </div>
+    </div>
+    <div class="child group1">
+      Lorem Ipsum
+      <div class="grand-child group2" id>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </div>
+    </div>
+    <div class="child group1">
+      Lorem Ipsum
+      <div class="grand-child group3" id>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </div>
+    </div>
+  </main>
+  <h1></h1>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <input type="text">
+</body>
+
+</html>

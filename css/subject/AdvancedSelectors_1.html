@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Selectors</title>
+  <link rel="stylesheet" href="/myrest.css">
+  <style>
+    /* COMBINADORES DE HIJOS Y HERMANOS
+
+    >- el combinador infantil: los hijos directos del elemento. 
+    +- el combinador de hermanos adyacentes: Cada + es un hermano mas
+    ~- el combinador general de hermanos: Todos los hermanos(sin importar si son adyacentes )  */
+
+    /* Esta regla solo seleccionará divs con una clase de hijo */
+    main>div {
+      font-size: 45px;
+    }
+
+    /* Esta regla solo seleccionará divs con una clase de nieto */
+    main>div>div {
+      font-size: 20px;
+    }
+
+    /* Esta regla seleccionará solo el div con la clase child group2 */
+    .group1+div {
+      color: #f55;
+    }
+
+    /* Esta regla seleccionará solo el div con la clase child group3 */
+    .group1+div+div {
+      color: #5f5;
+    }
+
+    /* Esta regla seleccionará a todos los hermanos de .group1, en este caso, el segundo y tercer div con la clase .child */
+    .group1~div {
+      font-weight: bold;
+    }
+
+    /* PSEUDO-SELECTORES
+    PSEUDOCLASES : ":"
+    PSEUDOELEMENTOS : "::"
+    */
+
+    /* PSEUDOCLASES: Las pseudoclases nos ofrecen diferentes formas de apuntar a elementos en nuestro HTML. */
+
+    /* Pseudoclases dinámicas y de acción de usuario. */
+
+    main>button:focus {
+      filter: brightness(50%);
+    }
+
+    main>div:hover {
+      background-color: antiquewhite;
+    }
+
+    main>button:active {
+      filter: brightness(20%);
+    }
+
+    main>a:visited {
+      color: #000;
+    }
+
+    /* Pseudoclases estructurales */
+
+    /* :root: La pseudoclase :root representa el elemento raíz de su documento, generalmente el elemento <html>. A menudo se usa para definir reglas CSS globales. */
+    :root {
+      --primary-color: #007bff;
+    }
+
+    button {
+      background-color: var(--primary-color);
+    }
+
+    /*  ":first-child y :last-child:": first-child selecciona el primer hijo de su elemento padre, y :last-child selecciona el último hijo. */
+    main> :first-child {
+      background-color: #f55;
+      font-size: 45px;
+      display: block;
+    }
+
+    main> :last-child {
+      background-color: #55f;
+    }
+
+    /* ":empty": :empty selecciona elementos que no tienen ningún hijo, ya sea texto o elementos anidados. */
+    *:empty {
+      height: 100px;
+      width: 100px;
+      background-color: #000;
+    }
+
+    /* ":only-child": :only-child selecciona elementos que son hijos únicos, es decir, no tienen hermanos. */
+
+    body>*:only-child {
+      background-color: #ff0;
+    }
+
+    /* ":nth-child": :nth-child(n) selecciona elementos que son el enésimo hijo de su elemento padre. Puedes usar valores específicos o fórmulas matemáticas para apuntar a elementos específicos. */
+    
+    /* Selecciona elementos pares */
+    .child:nth-child(even) {
+      background-color: #5f5;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="parent">
+    <a href="#">Hola</a>
+    <button>hola mundo</button>
+    <div class="child group1">
+      Lorem Ipsum
+      <div class="grand-child group1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </div>
+    </div>
+    <div class="child group1">
+      Lorem Ipsum
+      <div class="grand-child group2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </div>
+    </div>
+    <div class="child group1">
+      Lorem Ipsum
+      <div class="grand-child group3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </div>
+    </div>
+  </main>
+  <h1></h1>
+</body>
+
+</html>

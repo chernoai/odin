@@ -1,0 +1,14 @@
+/* El cálculo del valor de especificidad en CSS es un proceso que se utiliza para determinar cuál regla CSS debería aplicarse cuando múltiples reglas compiten por estilizar un mismo elemento en una página web. La especificidad es una forma de priorizar qué regla debe aplicarse cuando hay conflictos.
+
+La especificidad se calcula utilizando cuatro componentes:
+
+Número de IDs: Este componente representa la cantidad de ID selectors (selectores que apuntan a un elemento por su atributo id) en la regla. Cuantos más IDs haya, mayor será la especificidad.
+
+Número de Clases y Atributos: Este componente cuenta la cantidad de clases, atributos y pseudo-clases en la regla. Cuantos más haya, mayor será la especificidad.
+
+Número de Elementos y Pseudo-elementos: Este componente cuenta la cantidad de elementos HTML y pseudo-elementos en la regla. Cuantos más haya, mayor será la especificidad.
+
+Importancia del Orden: Si dos reglas tienen la misma especificidad en los tres componentes anteriores, entonces la última regla encontrada en el documento es la que se aplica. Esto se refiere al orden de aparición de las reglas en la hoja de estilos. 
+
+El valor de especificidad se representa típicamente como un número de cuatro dígitos, donde cada componente se mapea a un dígito. Por ejemplo, una especificidad de "0123" significa que hay 0 IDs, 1 clase o atributo, 2 elementos y ningún pseudo-elemento en la regla.
+*/

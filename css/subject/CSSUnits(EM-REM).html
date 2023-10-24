@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Units</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f2f2;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+    }
+
+    .container {
+      background: #550a46;
+      color: #fff;
+      width: 90%;
+      max-width: 50em;
+      margin: 1.87em auto;
+      padding: 1.87em;
+      border-radius: 10px;
+      font-size: 1em;
+    }
+
+    .container h1 {
+      color: #f8b400;
+      margin-bottom: 1.25rem;
+      font-family: 'Merriweather', serif;
+      font-weight: normal;
+      font-size: 2em;
+    }
+
+    .container p {
+      line-height: 200%;
+      margin-bottom: 1.25em;
+      font-size: 1em;
+    }
+
+    .container button {
+      font-size: 1em;
+      display: inline-block;
+      padding: 0.625em 1.25em;
+      font-family: 'Open Sans', sans-serif;
+      border: none;
+      cursor: pointer;
+      background: #617be3;
+      color: #fff;
+      border-radius: 100px;
+    }
+
+
+
+    @media screen and (max-width: 500px) {
+      .container {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Hola Mundo</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique omnis maxime, a eaque qui neque repellendus
+      iure
+      ipsa exercitationem voluptate atque officiis veniam assumenda esse molestias aliquid velit ex? Ipsum!
+    </p>
+    <button>Ver Anuncio</button>
+  </div>
+</body>
+
+</html>

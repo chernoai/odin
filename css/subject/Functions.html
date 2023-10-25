@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+  <style>
+    :root {
+      --50px: 50px;
+      font-size: 20px;
+    }
+
+    .container {
+      font-size: 25px;
+    }
+
+    /* La función linear-gradient en CSS se utiliza para crear degradados lineales, que son transiciones suaves entre dos o más colores en una dirección específica. */
+    [class*="div"] {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+    }
+
+    .div-1 {
+      background: linear-gradient(to bottom, #5f5, #f55);
+    }
+
+    /* Puedes personalizar aún más tu degradado lineal agregando más colores y ajustando el ángulo de dirección. Aquí tienes un ejemplo más complejo: */
+    .div-2 {
+      background: linear-gradient(180deg, #f55, #ff5, #5f5, #55f);
+    }
+
+    /* CALC() */
+    :root {
+      --width: calc(var(--50px)*3);
+      --height: calc(var(--50px)*3);
+    }
+
+    .div-3 {
+      width: var(--width);
+      height: var(--height);
+      background-color: #f55;
+    }
+
+
+    /* MIN() 
+    La función min() en CSS es una forma eficaz de establecer un límite superior en un valor, garantizando que un elemento no exceda un cierto tamaño. Puede ser especialmente útil en diseño web responsivo.*/
+    .div-4 {
+      width: 200px;
+      height: 200px;
+      border: 1px solid;
+    }
+
+    .div-4_child {
+      margin: 0;
+      background-color: #5f5;
+      width: min(150px, 100%);
+      height: min(150px, 100%);
+      /* . Si el elemento padre es lo suficientemente ancho para acomodar 150px, tendrá un ancho de 150px. Si no, se expandirá al 100% del ancho del padre. */
+    }
+
+    /* MAX() 
+     La función max() en CSS funciona de manera inversa a min(). En lugar de definir un límite inferior, establece un límite superior para un valor. Esta función es útil para garantizar que una propiedad no exceda un valor máximo */
+
+    .div-5 {
+      background-color: #55f;
+      width: max(100px, 0vw, 10em);
+      height: max(100px, 1cm, 10rem);
+    }
+
+    /* CLAMP() 
+    La función clamp() en CSS es una herramienta poderosa para establecer propiedades con un rango de valores aceptables.
+    
+    La función clamp() toma tres argumentos:
+
+    property: clamp(min, preferred, max);
+
+    1.min: Es el valor mínimo permitido para la propiedad.
+    2.preferred: Es el valor deseado o ideal para la propiedad.
+    3.max: Es el valor máximo permitido para la propiedad.
+    
+    */
+
+    .div-6 {
+      background-color: #ff0;
+      width: clamp(200px, 15rem, 80vw);
+      height: 10em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="div-1"></div>
+    <div class="div-2"></div>
+    <div class="div-3"></div>
+    <div class="div-4">
+      <div class="div-4_child"></div>
+    </div>
+    <div class="div-5"></div>
+    <div class="div-6"></div>
+  </div>
+</body>
+
+</html>

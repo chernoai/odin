@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlexBox Basics</title>
+  <style>
+    .parent {
+      background-color: #f5f;
+      margin: 0 auto;
+      height: 350px;
+      outline: 5px solid #55f;
+      border-radius: 5px;
+    }
+
+    .parent>div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0eb;
+      width: 200px;
+      font-size: 25px;
+      outline: 5px solid #55f;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+
+    .parent-2 {
+      background-color: #f5f;
+      margin: 50px auto;
+      height: 100px;
+      width: 500px;
+      outline: 5px solid #55f;
+      border-radius: 5px;
+    }
+
+    .parent-2>div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0eb;
+      outline: 1px solid #55f;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  </style>
+  <style>
+    .child-1 {
+      height: 70px;
+      order: 3;
+
+    }
+
+    .child-2 {
+      margin-top: 20px;
+      height: 90px;
+      order: 4;
+    }
+
+    .child-3 {
+      height: 50px;
+      order: 1;
+    }
+
+    .child-4 {
+      height: 30px;
+      order: 2;
+    }
+
+    .parent {
+      display: flex;
+      width: 90%;
+      /* flex-direction: row;  
+      row: Este es el valor predeterminado. Los elementos se colocan de izquierda a derecha.
+     
+      row-reverse: Al igual que row, los elementos se colocan en filas horizontales, pero en orden inverso, de derecha a izquierda.
+      
+      column: Los elementos se colocan en columnas verticales, de arriba a abajo.
+
+      column-reverse: Al igual que column, los elementos se colocan en columnas verticales, pero en orden inverso, de abajo a arriba.
+      */
+      /* flex-wrap: wrapr;  
+      nowrap: Este es el valor predeterminado. Los elementos no se envuelven y, en su lugar, pueden encimarse si no hay suficiente espacio en el contenedor.
+      
+      wrap: Los elementos se envuelven en filas o columnas adicionales si no caben en una sola fila o columna, según la dirección definida por flex-direction.
+
+      wrap-reverse: Similar a wrap, pero los elementos se envuelven en sentido inverso. 
+      */
+      flex-flow: row wrap;
+      /* 
+      La propiedad flex-flow es una propiedad abreviada en CSS que combina las propiedades flex-direction y flex-wrap. */
+      justify-content: space-evenly;
+      /* 
+      flex-start: Los elementos se alinean al comienzo del contenedor a lo largo del eje principal.
+      
+      flex-end: Los elementos se alinean al final del contenedor a lo largo del eje principal.
+
+      center: Los elementos se alinean en el centro del contenedor a lo largo del eje principal.
+
+      space-between: Se empujan los elementos entre ellos. 
+      
+      space-around: Se empujan los elementos entre ellos dejando el mismo espacio antes del primero y despues del ultimo. 
+
+      space-evenly: Se alejna los elementos de cualquier borde de manera equidistante. 
+      */
+      align-items: baseline;
+      /* 
+      flex-start: Los elementos se alinean al comienzo del contenedor a lo largo del eje transversal.
+      
+      flex-end: Los elementos se alinean al final del contenedor a lo largo del eje transversal.
+      
+      center: Los elementos se alinean en el centro del contenedor a lo largo del eje transversal.
+      
+      baseline: Los elementos se alinean en función de su línea base (la línea en la que descansan las letras en el texto).
+      
+      stretch: Los elementos se estiran para ocupar todo el espacio disponible a lo largo del eje transversal.
+      */
+      align-content: space-between;
+      /* 
+      Requiere flex-flow: wrap o wrap-reverse y multi linea
+
+      flex-start: El contenido se alinea en el comienzo del contenedor en el eje transversal.
+
+      flex-end: El contenido se alinea en el final del contenedor en el eje transversal.
+
+      center: El contenido se alinea en el centro del contenedor en el eje transversal.
+
+      space-between: El espacio entre los elementos se distribuye de manera uniform Y primer elemento esté alineado en el inicio y el último elemento esté alineado en el final.
+
+      space-around: habrá espacio igual antes del primer elemento y después del último elemento, así como entre los elementos.
+
+      stretch: Los elementos se estirarán para llenar todo el espacio disponible en el eje transversal.
+      */
+      gap: 15px;
+
+      /* 
+      gap: Nos permite anadir espacio entre los elementos  sin afectar al espacio que tengan con el contenedor. 
+      */
+      /*
+       Order es útil cuando se desea controlar el orden de visualización de elementos en diferentes contextos de diseño. 
+      */
+    }
+
+    .child-5 {
+      flex: 0 2 80px;
+
+    }
+
+    .child-6 {
+      flex: 2 0 100px;
+
+    }
+
+    .child-7 {
+      flex: 3 2 60px;
+
+    }
+
+    .child-8 {
+      flex: 1 auto;
+    }
+
+    .parent-2 {
+      display: flex;
+      width: 100%;
+    }
+
+    .parent-2>div {
+      width: 60px;
+    }
+
+    /* 
+    flex-grow determina la capacidad de un elemento flexible (flex item) para crecer y ocupar espacio adicional dentro de un contenedor flexible (flex container). Esta propiedad define la proporción en la que un elemento crecerá en relación con otros elementos dentro del mismo contenedor.
+    
+    flex-shrink determina la capacidad de un elemento flexible (flex item) para encogerse y ceder espacio cuando el espacio disponible es menor que el espacio ocupado por los elementos flexibles dentro de un contenedor flexible (flex container). Esta propiedad define la proporción en la que un elemento se reducirá en relación con otros elementos dentro del mismo contenedor cuando se necesita espacio adicional.
+
+    flex-basis define el tamaño base de un elemento flexible (flex item) en el eje principal antes de que se distribuyan los espacios disponibles. En otras palabras, flex-basis establece el tamaño inicial del elemento antes de que se tenga en cuenta la propiedad flex-grow y flex-shrink.
+    */
+  </style>
+</head>
+
+<body>
+  <div class="parent">
+    <div class="child-1">LOGO</div>
+    <div class="child-2">MENU</div>
+    <div class="child-3">BUSQUEDA</div>
+    <div class="child-4">LOGIN</div>
+  </div>
+  <div class="parent-2">
+    <div class="child-5">1</div>
+    <div class="child-6">2</div>
+    <div class="child-7">3</div>
+    <div class="child-8">4</div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Properties</title>
+  <style>
+    div {
+      display: block;
+      width: 100px;
+      height: 100px;
+      font-size: 20px;
+      text-align: center;
+      margin: 5px auto;
+    }
+
+    /* El uso de propiedades personalizadas en CSS te permite definir tus propias variables para reutilizar valores en tus reglas. Aquí tienes una explicación mejorada y ejemplos adicionales:
+
+    Declaración de propiedades personalizadas:
+
+    Para declarar una propiedad personalizada, sigue esta sintaxis: */
+    :root {
+      /* :root se utiliza para declarar variables globales. Puedes también declarar propiedades personalizadas específicas en elementos particulares si lo prefieres */
+      --div1-color: #f55;
+      --div1-text_color: #5f5;
+
+    }
+
+    /* Acceso a propiedades personalizadas:
+
+    Para acceder a una propiedad personalizada, utiliza la función var() como valor de una propiedad CSS. Aquí tienes la sintaxis: */
+    .div-1 {
+      background-color: var(--div1-color);
+      color: var(--div1-text_color);
+    }
+
+    .div-2 {
+      background-color: var(--div1-colr, #55f);
+      /*  Sin embargo, también podemos tener un valor de respaldo si --div1-colr no está definido. */
+      color: var(--div1-text_color);
+    }
+
+    /* El alcance de una propiedad personalizada en CSS está determinado por el selector en el que se declara. Esto significa que la propiedad personalizada y sus valores se aplican a ese selector y a cualquier descendiente de ese selector. Es similar al concepto de alcance en JavaScript. */
+
+    .container {
+      --border-color: #ff5;
+    }
+
+    .div-3 {
+      margin: 10px;
+      background-color: #5ff;
+    }
+
+    .div-1,
+    .div-2,
+    .div-3 {
+      border: 5px solid var(--border-color, #000);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="div-1">DIV 1</div>
+    <div class="div-2">DIV 2</div>
+  </div>
+  <div class="div-3">DIV 3</div>
+
+</body>
+
+</html>

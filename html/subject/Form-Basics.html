@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Basics</title>
+  <style>
+    label {
+      display: block;
+    }
+
+    textarea {
+      resize: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- El elemento formulario acepta dos atributos esenciales; el primero es el "action" atributo que toma un valor de URL que le indica al formulario dónde debe enviar sus datos para ser procesados. 
+  
+  El segundo es el method atributo que le indica al navegador qué método de solicitud HTTP debe utilizar para enviar el formulario. 
+  -->
+
+  <form action="#" method="post">
+    <!-- Usamos GET cuando queremos recuperar algo de un servidor. Por ejemplo, Google utiliza una solicitud GET cuando realiza una búsqueda para obtener los resultados de la búsqueda.
+    
+    POST se utiliza cuando queremos cambiar algo en el servidor, por ejemplo, cuando un usuario crea una cuenta o realiza un pago en un sitio web.
+    -->
+
+    <!-- Para mejorar la usabilidad de un formulario, es esencial proporcionar etiquetas(<label>) que describan el tipo de datos que se espera en cada entrada. Que se asocia con una entrada específica utilizando el atributo FOR. La entrada correspondiente debe tener un atributo ID con el mismo valor que el atributo for de la etiqueta. -->
+
+    <!-- Para proporcionar orientación a los usuarios sobre qué información ingresar en los campos de un formulario, podemos utilizar el atributo placeholder. Este atributo se agrega a la entrada del formulario y muestra un texto de marcador de posición que describe o ejemplifica el tipo de datos esperados. Es una forma efectiva de demostrar cómo debe ingresarse la información y proporciona una guía visual para los usuarios al interactuar con el formulario. -->
+
+    <!-- Para permitir que el backend identifique cada tipo de dato, es esencial agregar el atributo name a las entradas del formulario. Este atributo proporciona una referencia a los datos ingresados y se utiliza como un nombre de variable cuando se envía el formulario al backend. Sin el atributo name, la entrada puede ser ignorada durante el proceso de envío del formulario. -->
+
+    <fieldset class="user_data">
+      <!-- El elemento <legend> se utiliza para proporcionar un título o encabezado a los conjuntos de campos en formularios, permitiendo a los usuarios comprender el propósito de la agrupación de entradas. Para crear una leyenda, simplemente usamos el elemento <legend> con el texto que queremos mostrar entre sus etiquetas de apertura y cierre. La leyenda siempre debe seguir inmediatamente a la etiqueta de apertura de un conjunto de campos <fieldset>. -->
+      <legend>User Details</legend>
+
+      <label for="user_name">Your Name</label>
+      <input type="text" id="user_name" placeholder="Cherno Malik" name="user_name">
+
+      <label for="user_age">Your Age</label>
+      <input type="number" id="user_age" name="user_age">
+
+      <label for="date-of-birth">Your Birthdate</label>
+      <input type="date" id="user_birthdate" name="user_birthdate">
+
+      <!-- A diferencia de los elementos de entrada, los elementos de Textarea tienen una etiqueta de cierre. Esto le permite ajustar el contenido inicial que desea que muestre el área de texto: <textarea>Some initial content</textarea>-->
+      <label for="user_bio">About You</label>
+      <textarea name="user_bio" id="user_bio" cols="21" rows="1">Tell us about you...</textarea>
+    </fieldset>
+
+    <fieldset class="sing-in">
+      <legend>Sing-in</legend>
+
+      <label for="user_email">Your Email</label>
+      <input type="email" id="user_email" name="user_email" placeholder="ejemplo@mail.ej">
+
+      <label for="user_password">Your Password</label>
+      <input type="password" id="user_password" name="user_password">
+    </fieldset>
+
+    <fieldset class="questions">
+      <legend>Help us</legend>
+
+      <label for="user_number">What number is yours?</label>
+
+      <select name="user_number" id="user_number">
+        <optgroup label="under_five">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </optgroup>
+
+        <optgroup label="over_five">
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8" selected>8</option>
+          <option value="9">9</option>
+        </optgroup>
+      </select>
+
+      <!-- Los botones de opción (input con type="radio") son ideales cuando tenemos una lista más pequeña de 5 o menos opciones para elegir.  -->
+      <p>How did you know us?</p>
+      <div>
+        <label for="friends">
+          <input type="radio" name="know-us" id="friends">Friends
+        </label>
+
+        <label for="ads">
+          <input type="radio" name="know-us" id="ads" checked>Ads
+        </label>
+
+        <label for="others"><input type="radio" name="know-us" id="others">Others...
+        </label>
+      </div>
+      <!-- En este ejemplo, cada botón de opción tiene un id único y comparten el mismo name para formar un grupo. El atributo checked en el primer botón (ads) indica que esta opción está seleccionada por defecto al cargar la página. -->
+    </fieldset>
+
+    <fieldset class="order">
+      <legend>Kebab Extras</legend>
+
+      <!-- Las casillas de verificación son como los botones de opción, pero con la capacidad de seleccionar múltiples opciones a la vez. Se crean usando el elemento <input> con un atributo type de "checkbox". -->
+      <div>
+        <h5>Sauces</h5>
+        <label for="chilli_sauce">
+          <input type="checkbox" name="sauces" id="chilli_sauce">
+          Chilli Sauce
+        </label>
+
+        <label for="mayo">
+          <input type="checkbox" name="sauces" id="mayo">
+          Mayo
+        </label>
+
+        <label for="bbq">
+          <input type="checkbox" name="sauces" id="bbq">
+          BBQ
+        </label>
+
+        <h5>Toppings</h5>
+        <label for="cheese">
+          <input type="checkbox" name="toppings" id="cheese">
+          Cheese
+        </label>
+
+        <label for="peperoni">
+          <input type="checkbox" name="toppings" id="peperoni">
+          Peperoni
+        </label>
+
+        <label for="olives">
+          <input type="checkbox" name="toppings" id="olives">
+          Olives
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- Una sola casilla de verificación se utiliza cuando queremos que los usuarios indiquen su preferencia sobre una opción verdadera o falsa, como suscribirse a un boletín. Se crea con el elemento <input> y se puede configurar para estar marcada por defecto con el atributo checked. -->
+    <label for="terms">
+      <input type="checkbox" name="terms" id="terms">
+      Let me know about discounts
+    </label>
+
+    <!-- Un botón especializado es el "botón de envío", diseñado para enviar formularios. Se crea con <button type="submit">Enviar</button>. Cuando se hace clic en este botón, se envía el formulario asociado. -->
+    <button type="submit">Submit</button>
+
+    <!-- El "botón de reinicio" es útil para borrar todos los datos ingresados en un formulario y restaurar sus valores originales. Se crea con <button type="reset">Reiniciar</button>. Al hacer clic en este botón, se restauran todas las entradas del formulario. -->
+    <button type="reset">Reset</button>
+
+
+    <!-- Hay un tercer tipo de botón, el botón genérico, que es versátil y se utiliza comúnmente con JavaScript para crear interfaces de usuario interactivas.  -->
+    <button type="button">Click to Toggle</button>
+    <!--Es crucial tener en cuenta que, dentro de un formulario, un botón con el atributo type establecido como "submit" (que es el valor predeterminado) intentará enviar datos al servidor al hacer clic. Para evitar comportamientos no deseados al enviar el formulario, se debe especificar el atributo type para los botones que tienen propósitos distintos al envío de datos. -->
+
+    <!-- Cuando utilizamos un botón dentro de un formulario, el tipo de botón predeterminado es "submit" (enviar). Esto implica que al hacer clic, el botón intentará enviar datos al servidor. Para evitar este comportamiento no deseado, especialmente cuando el botón tiene un propósito diferente dentro del formulario, es crucial especificar el atributo "type" del botón. De esta manera, podemos controlar y evitar envíos accidentales de datos al servidor. -->
+  </form>
+
+
+  <!-- Estilos de navegador predeterminados
+
+  Cada navegador tiene sus propios estilos predeterminados para los controles de formulario, lo que hace que sus formularios sean visualmente diferentes para los usuarios dependiendo del navegador que estén usando.
+
+  Para tener un diseño coherente en todos los navegadores, debemos anular estos estilos predeterminados y diseñarlos nosotros mismos. -->
+</body>
+
+</html>

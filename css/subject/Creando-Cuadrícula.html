@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creando una cuadrícula</title>
+  <style>
+    .box {
+      display: grid;
+      gap: 20px;
+    }
+
+    .container {
+      display: grid;
+    }
+
+    .container2 {
+      display: grid;
+    }
+
+    div[class*="c"]>div {
+      border: 1px solid;
+    }
+  </style>
+  <style>
+    .container {
+      /* Columnas y filas */
+      grid-template-columns: 55px 50px 45px;
+      /* cada unidad significa cunato medira cada columna (55px: columna 1, 50px: columna 2, 45px: columna 3)  */
+      grid-template-rows: 55px 50px;
+      /* cada unidad significa cunato medira cada fila (55px: fila 1, 50px: fila 2)  */
+
+      /* Si deseamos agregar más columnas o filas, simplemente definimos estos valores adicionales */
+
+      grid-template: 55px 50px / 55px 50px 45px;
+      /* CSS Grid también proporciona una propiedad abreviada, grid-template, que nos permite definir filas y columnas de una vez. Aquí, las filas se definen antes de la barra y las columnas después de la barra */
+    }
+
+    .container2 {
+      /* Cuadrícula explícita versus implícita */
+
+      /*Al agregar un quinto elemento sin modificar las propiedades grid-template-columns o grid-template-rows, este se coloca en una tercera fila no definida. Esto ocurre debido al concepto de cuadrícula implícita en CSS Grid, que automáticamente coloca elementos cuando no se ha especificado su diseño explícitamente.*/
+      grid-template: 50px 50px/50px 50px;
+      grid-auto-rows: 50px;
+    }
+
+    .container {
+      /* Gap */
+
+      /* En CSS Grid, el espacio entre las filas y columnas se conoce como canalón o callejón. Puedes ajustar los tamaños de estos espacios individualmente para filas y columnas utilizando las propiedades column-gap y row-gap. Además, la propiedad abreviada gap permite establecer ambos espacios al mismo tiempo. */
+
+      row-gap: 20px;
+      column-gap: 20px;
+      gap: 20px
+    }
+  </style>
+  <style>
+    .container3 {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 100px 200px;
+      grid-template-rows: 100px 150px;
+      grid-auto-rows: 200px 250px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="container">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+      <div>Item 4</div>
+    </div>
+
+    <div class="container2">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+      <div>Item 4</div>
+      <div>Item 5</div>
+    </div>
+
+    <div class="container3">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+      <div>Item 4</div>
+      <div>Item 5</div>
+      <div>Item 6</div>
+      <div>Item 5</div>
+      <div>Item 6</div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propiedades avanzadas de cuadrícula</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      padding: 10px;
+    }
+
+    .grid-container {
+      display: grid;
+      resize: both;
+      overflow: auto;
+      gap: 4px;
+      padding: 10px;
+      border: 1px solid grey;
+      background-color: skyblue;
+    }
+
+    .grid-container2 {
+      display: grid;
+      padding: 10px;
+      gap: 4px;
+      width: 100%;
+      background: #f55;
+      box-sizing: border-box;
+    }
+
+    .grid-item {
+      background-color: #070606;
+      text-align: center;
+      color: #ddd;
+      font-family: sans-serif;
+      font-size: 1.5rem;
+      padding: 12px;
+    }
+
+    p {
+      margin: 12px auto 24px;
+    }
+
+    img {
+      height: 60px;
+    }
+
+    .container {
+      display: grid;
+      resize: both;
+      overflow: hidden;
+      width: 100%;
+      outline: 1px solid #000;
+      gap: 5px;
+      padding: 5px;
+      background-color: #55f;
+      box-sizing: border-box;
+    }
+
+    div>div {
+      background-color: #f55;
+      outline: 1px solid;
+
+    }
+  </style>
+  <style>
+    /* Tamaños de pista mínimos y máximos: min() y max() */
+    .grid-container {
+      grid-template-rows: repeat(2, min(150px, 47.87%));
+      /* min() devuelve el menor valor entre los 2(150px o 47.87%%) */
+      grid-template-columns: repeat(5, max(50px, 19.6%));
+      /* max() devuelve el valor mas grande entre los 2(50px o 19.6%) */
+    }
+  </style>
+  <style>
+    /* minmax() */
+    /* minmax()es una función CSS que se usa específicamente con Grid. Sólo se puede utilizar con las siguientes propiedades CSS:
+
+      grid-template-columns
+      grid-template-rows
+      grid-auto-columns
+      grid-auto-rows
+      
+    Es una función relativamente sencilla que sólo acepta dos argumentos:
+
+      El tamaño mínimo que puede tener la pista de la cuadrícula.
+      El tamaño máximo que puede tener la pista de la cuadrícula*/
+    .grid-container {
+      grid-template-rows: repeat(2, minmax(50px, 100%));
+      grid-template-columns: repeat(5, minmax(50px, 100%));
+    }
+  </style>
+  <style>
+    /* clamp()() */
+    img {
+      height: clamp(0%, 50%, 100%);
+      width: clamp(0%, 50%, 100%);
+    }
+  </style>
+  <style>
+    /* auto-fit y auto-fill */
+    /* auto-fit se utiliza para crear tantas columnas o filas como sea posible en el contenedor sin que se desborden. Se ajustará automáticamente al espacio disponible, auto-fit devolverá el número entero positivo más alto sin desbordar la cuadrícula. 
+    
+    Este valor es útil cuando deseas que el número de columnas o filas sea flexible y se adapte al tamaño del contenedor.
+
+    auto-fill es similar a auto-fit en términos de crear tantas columnas o filas como sea posible. La diferencia principal radica en cómo se maneja el espacio extra si no se pueden llenar todas las columnas o filas.
+
+    Si no hay suficiente contenido para llenar todas las columnas o filas, se generarán columnas o filas vacías
+    
+    
+    En resumen, auto-fit intentará ajustar las columnas o filas al espacio disponible sin generar columnas o filas vacías, mientras que auto-fill generará columnas o filas vacías si no hay suficiente contenido para llenarlas todas. Ambos son útiles en diferentes situaciones dependiendo de los requisitos de diseño.*/
+    .grid-container2 {
+      grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    }
+  </style>
+  <style>
+    .container {
+      grid-template-columns: repeat(auto-fill, 90px);
+    }
+
+    /* autofill NO cierra la ultima linea detras del ultimo grid */
+    .dos {
+      grid-template-columns: repeat(auto-fit, 90px);
+    }
+/* autofit SI cierra la ultima linea detras del ultimo grid */
+    .item4 {
+      grid-column-end: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="grid-item">
+      <p>Item 1</p>
+      <img src="https://i.redd.it/p9rw7dzp78451.png" alt="top logo" />
+    </div>
+    <div class="grid-item">
+      <p>Item 2</p>
+      <img src="https://i.redd.it/p9rw7dzp78451.png" alt="top logo" />
+    </div>
+    <div class="grid-item">
+      <p>Item 3</p>
+      <img src="https://i.redd.it/p9rw7dzp78451.png" alt="top logo" />
+    </div>
+    <div class="grid-item">
+      <p>Item 4</p>
+      <img src="https://i.redd.it/p9rw7dzp78451.png" alt="top logo" />
+    </div>
+    <div class="grid-item">
+      <p>Item 5</p>
+      <img src="https://i.redd.it/p9rw7dzp78451.png" alt="top logo" />
+    </div>
+    <div class="grid-item">
+      <p>Item 6</p>
+      <img src="https://i.redd.it/p9rw7dzp78451.png" alt="top logo" />
+    </div>
+    <div class="grid-item">
+      <p>Item 7</p>
+      <img src="https://i.redd.it/p9rw7dzp78451.png" alt="top logo" />
+    </div>
+    <div class="grid-item">
+      <p>Item 8</p>
+      <img src="https://i.redd.it/p9rw7dzp78451.png" alt="top logo" />
+    </div>
+    <div class="grid-item">
+      <p>Item 9</p>
+      <img src="https://i.redd.it/p9rw7dzp78451.png" alt="top logo" />
+    </div>
+    <div class="grid-item">
+      <p>Item 10</p>
+      <img src="https://i.redd.it/p9rw7dzp78451.png" alt="top logo" />
+    </div>
+  </div>
+  <div class="grid-container2">
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+  </div>
+  <div class="container ">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+    <div class="item4">Item 4</div>
+  </div>
+  <div class="container dos">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+    <div class="item4">Item 4</div>
+  </div>
+</body>
+
+</html>

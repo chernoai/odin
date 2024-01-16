@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usando Flexbox y Grid</title>
+  <style>
+    .layout {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .child {
+      min-height: 100px;
+      background: pink;
+    }
+
+    .layout2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 8px;
+    }
+
+    .child2 {
+      background: orange;
+      text-align: center;
+      padding: 25px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .last-row {
+      grid-column: 1 / 3;
+    }
+
+    .child2>div {
+      height: 50px;
+      background: darkred;
+      flex: 0 1 30%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Una forma de decidir entre Grid y Flexbox es considerar si tu diseño parte del contenido o del diseño.
+
+    
+  En Content First Design, comienzas definiendo claramente el contenido y luego aplicas el diseño, ideal para utilizar Flexbox. Flexbox ofrece control flexible sobre cómo los elementos crecen, se encogen, su tamaño y posición, resultando en un diseño dinámico.
+
+  En Layout First Design, decides la disposición y luego completas el contenido, donde Grid es destacado. Definir filas y columnas en la cuadrícula te otorga control total del diseño, permitiendo que el contenido llene espacios específicos. Cuando tienes una visión clara del diseño general, Grid es la elección obvia para organizar las piezas.
+  -->
+
+  <div class="layout">
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+  </div>
+  <div class="layout2">
+    <div class="child2">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="child2">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="child2 last-row">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+</body>
+
+</html>

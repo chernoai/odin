@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- Definición del DOM (Modelo de Objetos de Documento)-->
+  <!-- El DOM es una representación en forma de árbol del contenido de una página web -->
+  <div id="container">
+    <div class="display"></div>
+    <div class="controls"></div>
+  </div>
+  <!-- Representación visual del árbol:
+            container
+           /         \
+      display    controls -->
+
+  <script>
+    {// Código en JavaScript para manipular el DOM
+      // Seleccionar el elemento padre por su id
+      const container = document.getElementById("container");
+
+      // Crear elementos hijos
+      const displayDiv = document.createElement("div");
+      displayDiv.className = "display";
+
+      const controlsDiv = document.createElement("div");
+      controlsDiv.className = "controls";
+
+      // Adjuntar hijos al padre
+      container.appendChild(displayDiv);
+      container.appendChild(controlsDiv);
+
+      // Comentario: El DOM organiza los elementos como un árbol, donde cada elemento tiene un padre y puede tener varios hijos
+    }
+    {// Apuntar a nodos con selectores en el DOM
+
+      // Utilizar selectores de estilo CSS para referenciar nodos
+      const displayNode = document.querySelector('div.display');
+      // Selecciona <div class="display"></div>
+
+      const displayNodeAlt = document.querySelector('.display');
+      // También se puede seleccionar con la clase => <div class="display"></div>
+
+      const displayNodeContainer = document.querySelector('#container > .display');
+      // Selecciona <div class="display"></div> dentro de #container
+
+      const displayNodeFull = document.querySelector('div#container > div.display');
+      // Otra forma de seleccionar <div class="display"></div> dentro de #container
+
+      { // Utilizar selectores relacionales y propiedades especiales
+        const container = document.querySelector('#container');
+        // Selecciona el nodo padre #container
+
+        console.dir(container.firstElementChild);
+        // Selecciona el primer hijo de #container => <div class="display"></div>
+
+        const controls = document.querySelector('.controls');
+        // Selecciona el nodo con la clase .controls
+
+        console.dir(controls.previousElementSibling);
+        // Selecciona el hermano anterior => <div class="display"></div>
+
+        // Comentario: Los selectores y propiedades ayudan a identificar nodos según sus relaciones en el árbol DOM.
+      }
+    }
+    {// Métodos DOM para manipulación y eventos
+
+      {// Selectores de consultas
+        const element = document.querySelector('selector'); // Selecciona el primer elemento que coincide con el selector
+        const elements = document.querySelectorAll('selectors'); // Selecciona todos los elementos que coinciden con los selectores
+      }
+      {// Creación de elementos
+        const newElement = document.createElement('div'); // Crea un nuevo elemento del tipo especificado
+        const childNode = document.createElement("p")
+        const referenceNode = document.createElement("h2")
+        const newNode = document.createElement("h1")
+
+        // Agregar elementos Y Eliminar elementos
+        newElement.appendChild(childNode);
+        newElement.appendChild(referenceNode);
+        // Agrega childNode como el último hijo de parentNode
+        newElement.insertBefore(newNode, referenceNode); // Inserta newNode en parentNode antes de referenceNode
+
+        newElement.removeChild(childNode); // Elimina el hijo de parentNode en el DOM y devuelve una referencia al hijo
+      }
+      {// Alterar elementos
+        const div = document.createElement('div');
+
+        div.style.color = 'blue'; // Agrega una regla de estilo en línea
+        div.style.cssText = 'color: blue; background: white;'; // Agrega varias reglas de estilo en línea
+        div.setAttribute('style', 'color: blue; background: white;'); // Agrega varias reglas de estilo en línea
+
+        div.setAttribute('id', 'theDiv'); // Agrega o actualiza el atributo con el valor especificado
+        div.getAttribute('id'); // Obtiene el valor del atributo especificado
+        div.removeAttribute('id'); // Elimina el atributo especificado
+
+        div.classList.add('new'); // Agrega una clase al elemento
+        div.classList.remove('new'); // Elimina una clase del elemento
+        div.classList.toggle('active'); // Agrega o elimina una clase según su presencia
+
+        div.textContent = 'Hello World'; // Agrega contenido de texto al elemento
+        div.innerHTML = '<span>Hello World</span>'; // Agrega contenido HTML al elemento
+      }
+    }
+  </script>
+  <div>
+    <button onclick="alert('Metodo 1')">METODO 1</button>
+    <button id="btn2">METODO 2</button>
+    <button onclick="alertFunction()">METODO 1&2</button>
+    <button id="btn3">METODO 3</button>
+  </div>
+  <div id="container">
+    <button id="1">Btn 1</button>
+    <button id="2">Btn 2</button>
+    <button id="3">Btn 3</button>
+</div>
+  <script>
+    {// Eventos en JavaScript
+
+      // Método 1: Atributos de función directamente en elementos HTML
+      // No es ideal porque mezcla JavaScript con HTML y solo permite una función por elemento
+
+      // Método 2: Propiedades de formulario en nodos DOM
+      // Mejora la separación de preocupaciones, pero sigue limitado a una función por elemento
+      const btn2 = document.querySelector('#btn2');
+      btn2.onclick = () => alert("Metodo 2");
+
+      // Método 1 y 2: Uso de funciones con nombre para limpiar el código
+      function alertFunction() {
+        alert("Metodo 1&2");
+      }
+
+      // Método 3: Detectores de eventos
+      // Ofrece mayor flexibilidad y permite múltiples escuchas de eventos
+      const btn3 = document.querySelector('#btn3');
+      btn3.addEventListener('click', () => {
+        alert("Metodo 3");
+      });
+
+      // Acceder a información sobre el evento
+      btn3.addEventListener('click', function (e) {
+        console.log(e); // Objeto que contiene información sobre el evento
+      });
+
+      // Comentario: Los eventos permiten que la página web escuche y reaccione a acciones del usuario, como clics o pulsaciones de teclas, mediante JavaScript.
+      {// Adjuntar oyentes a grupos de nodos en el DOM
+
+        // Obtener una lista de nodos de todos los elementos que coinciden con un selector específico
+        const buttons = document.querySelectorAll('button');
+
+        // Iterar a través de cada botón y agregar un oyente de evento 'click' a cada uno
+        buttons.forEach((button) => {
+          button.addEventListener('click', () => {
+            alert(button.id); // Mostrar el id del botón al hacer clic en él
+          });
+        });
+
+        // Comentario: Esta técnica permite agregar oyentes de eventos de manera eficiente a varios elementos del DOM con un solo bloque de código.
+      }
+    }
+  </script>
+
+
+  </div>
+</body>
+
+</html>

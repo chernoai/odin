@@ -1,0 +1,45 @@
+.container {
+  padding: 10px;
+}
+h1 {
+  margin: 10px 0;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+button {
+  padding: 3px;
+  margin-right: 5px; /* Agrega un margen derecho entre los botones */
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.book {
+  margin: 8px 0;
+  padding: 13px;
+  padding-top: 5px;
+  width: fit-content;
+  width: 270px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+input {
+  border: 1px solid #000;
+}
+form {
+  padding: 13px;
+  width: fit-content;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  width: 270px;
+}
+label {
+  display: inline-block;
+  width: 55px;
+}
+#add_btn {
+  margin-top: 7px;
+}

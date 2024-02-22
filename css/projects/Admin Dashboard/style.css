@@ -106,6 +106,7 @@ aside {
   padding-top: 15px;
   background-color: var(--green);
   height: calc(100vh - 80px);
+  box-shadow: 0 10px 0 var(--green);
 }
 #list_container {
   display: flex;
@@ -163,6 +164,9 @@ aside:hover .fa-bars {
   }
 }
 @media screen and (min-width: 730px) {
+  .aside{
+    box-shadow: none;
+  }
   #btn_container {
     position: relative;
     left: 25vw;

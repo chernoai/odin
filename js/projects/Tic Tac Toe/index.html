@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/MyResetCSS.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="home_screen screen">
+      <h2 id="h2_title">TIC <span class="pink_colored">TAC</span> TOE</h2>
+
+      <div id="static_board">
+        <table>
+          <tr class="static_row first_tr">
+            <td class="static_cell td1"></td>
+            <td class="static_cell td2"></td>
+            <td class="static_cell td3"></td>
+          </tr>
+          <tr class="static_row second_tr">
+            <td class="static_cell td4"></td>
+            <td class="static_cell td5"></td>
+            <td class="static_cell td6"></td>
+          </tr>
+          <tr class="static_row third_tr">
+            <td class="static_cell td7"></td>
+            <td class="static_cell td8"></td>
+            <td class="static_cell td9"></td>
+          </tr>
+        </table>
+      </div>
+      <div id="dinamic_board">
+        <table id="dinamic_table">
+          <tr class="dinamic_row tr1">
+            <td class="dinamic_cell td1">X</td>
+            <td class="dinamic_cell td2">O</td>
+            <td class="dinamic_cell td3"></td>
+          </tr>
+          <tr class="dinamic_row tr2">
+            <td class="dinamic_cell td4">O</td>
+            <td class="dinamic_cell td5"></td>
+            <td class="dinamic_cell td6">X</td>
+          </tr>
+          <tr class="dinamic_row tr3">
+            <td class="dinamic_cell td7">O</td>
+            <td class="dinamic_cell td8">X</td>
+            <td class="dinamic_cell td9"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="players_container">
+        <div class="players"></div>
+        <button id="play_btn">PLAY</button>
+        <div class="players"></div>
+      </div>
+    </div>
+    <div class="play_screen screen">
+      <h2 id="h2_title">TIC <span class="yellow_colored">TAC</span> TOE</h2>
+      <table id="play_board">
+        <tr class="play_row play_first_tr">
+          <td class="play_cell play_td1">X</td>
+          <td class="play_cell play_td2">O</td>
+          <td class="play_cell play_td3"></td>
+        </tr>
+        <tr class="play_row play_second_tr">
+          <td class="play_cell play_td4">O</td>
+          <td class="play_cell play_td5"></td>
+          <td class="play_cell play_td6">X</td>
+        </tr>
+        <tr class="play_row play_third_tr">
+          <td class="play_cell play_td7">X</td>
+          <td class="play_cell play_td8">O</td>
+          <td class="play_cell play_td9"></td>
+        </tr>
+      </table>
+      <div id="play_players_container">
+        <div class="play_players"></div>
+        <button id="fake_btn">PLAY</button>
+        <div class="play_players"></div>
+      </div>
+    </div>
+  </div>
+  <script src="code.js"></script>
+</body>
+
+</html>

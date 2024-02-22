@@ -1,0 +1,25 @@
+* {
+  /* Incluye padding y borde en el cálculo del tamaño. */
+  box-sizing: border-box;
+  /* Posicion basada en el padre inmediato y permite ajustes de top/right/bottom/left. */
+  position: relative;
+  /* Previene que los elementos de grid y flex se desborden de su contenedor. */
+  min-width: 0;
+}
+body {
+  /* Asegurar que el cuerpo llene todo el viewport. */
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  /* Equilibrar los encabezados en múltiples líneas en un bloque uniforme. */
+  text-wrap: balance;
+}
+
+p {
+  /* Prevenir huérfanos de texto (palabras solas en la última línea). */
+  text-wrap: pretty;
+}

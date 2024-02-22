@@ -43,6 +43,7 @@ newBtn.addEventListener('click', function () {
     readInput.setAttribute('type', 'checkbox')
 
     h2.textContent = "Anade un nuevo Libro"
+    titleLabel.textContent = "Titulo:"
     authorLabel.textContent = "Autor:"
     pagesLabel.textContent = "Paginas:"
     addBtn.textContent = "Anadir Libro"
@@ -155,4 +156,3 @@ toggle.addEventListener("click", function (e) {
     newBook.read = true
   }
 })
-

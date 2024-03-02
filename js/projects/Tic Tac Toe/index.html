@@ -34,54 +34,72 @@
         </table>
       </div>
       <div id="dinamic_board">
-        <table id="dinamic_table">
-          <tr class="dinamic_row tr1">
-            <td class="dinamic_cell td1">X</td>
-            <td class="dinamic_cell td2">O</td>
-            <td class="dinamic_cell td3"></td>
-          </tr>
-          <tr class="dinamic_row tr2">
-            <td class="dinamic_cell td4">O</td>
-            <td class="dinamic_cell td5"></td>
-            <td class="dinamic_cell td6">X</td>
-          </tr>
-          <tr class="dinamic_row tr3">
-            <td class="dinamic_cell td7">O</td>
-            <td class="dinamic_cell td8">X</td>
-            <td class="dinamic_cell td9"></td>
-          </tr>
-        </table>
+        <div id="dinamic_table">
+          <div class="dinamic_cell div1">X</div>
+          <div class="dinamic_cell div2">O</div>
+          <div class="dinamic_cell div3"></div>
+          <div class="dinamic_cell div4"></div>
+          <div class="dinamic_cell div5">O</div>
+          <div class="dinamic_cell div6">X</div>
+          <div class="dinamic_cell div7">O</div>
+          <div class="dinamic_cell div8"></div>
+          <div class="dinamic_cell div9">X</div>
+        </div>
       </div>
 
       <div id="players_container">
-        <div class="players"></div>
-        <button id="play_btn">PLAY</button>
-        <div class="players"></div>
+        <div class="players">
+          <img src="./img/Default_un_dibujo_cartoon_2d_de_un_chico_afro_con_colores_viba_3.jpg" alt="" srcset="">
+        </div>
+        <div class="buttons">
+          <button class="play_btn pvp_btn">2-Players</button>
+          <button class="play_btn pvai_btn">Player vs AI </button>
+        </div>
+        <div class="players">
+          <img src="./img/Default_un_dibujo_cartoon_2d_de_un_robot_estilo_robocop_con_c_1.jpg" alt="" srcset="">
+        </div>
       </div>
     </div>
     <div class="play_screen screen">
       <h2 id="h2_title">TIC <span class="yellow_colored">TAC</span> TOE</h2>
-      <table id="play_board">
-        <tr class="play_row play_first_tr">
-          <td class="play_cell play_td1">X</td>
-          <td class="play_cell play_td2">O</td>
-          <td class="play_cell play_td3"></td>
-        </tr>
-        <tr class="play_row play_second_tr">
-          <td class="play_cell play_td4">O</td>
-          <td class="play_cell play_td5"></td>
-          <td class="play_cell play_td6">X</td>
-        </tr>
-        <tr class="play_row play_third_tr">
-          <td class="play_cell play_td7">X</td>
-          <td class="play_cell play_td8">O</td>
-          <td class="play_cell play_td9"></td>
-        </tr>
-      </table>
+      <div class="play_view">
+        <div class="x_tokens">
+          <p class="token x_token">X</p>
+          <p class="token x_token">X</p>
+          <p class="token x_token">X</p>
+        </div>
+        <table id="play_board">
+
+          <tr class="play_row play_first_tr">
+            <td class="play_cell play_td1"></td>
+            <td class="play_cell play_td2"></td>
+            <td class="play_cell play_td3"></td>
+          </tr>
+          <tr class="play_row play_second_tr">
+            <td class="play_cell play_td4"></td>
+            <td class="play_cell play_td5"></td>
+            <td class="play_cell play_td6"></td>
+          </tr>
+          <tr class="play_row play_third_tr">
+            <td class="play_cell play_td7"></td>
+            <td class="play_cell play_td8"></td>
+            <td class="play_cell play_td9"></td>
+          </tr>
+        </table>
+        <div class="o_tokens">
+          <p class="token o_token">O</p>
+          <p class="token o_token">O</p>
+          <p class="token o_token">O</p>
+        </div>
+      </div>
       <div id="play_players_container">
-        <div class="play_players"></div>
+        <div class="play_players">
+          <img src="./img/Default_un_dibujo_cartoon_2d_de_un_chico_afro_con_colores_viba_3.jpg" alt="" srcset="">
+        </div>
         <button id="fake_btn">PLAY</button>
-        <div class="play_players"></div>
+        <div class="play_players">
+          <img src="./img/Default_un_dibujo_cartoon_2d_de_un_robot_estilo_robocop_con_c_1.jpg" alt="" srcset="">
+        </div>
       </div>
     </div>
   </div>

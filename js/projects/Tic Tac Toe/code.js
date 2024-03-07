@@ -125,6 +125,8 @@ playCells.forEach(cell => {
                 tokens.forEach(token => {
                   token.removeAttribute("draggable");
                 });
+          //! ||||||||||||  PANTALLA DE WIN ||||||||||||||| 
+
               }
             }
           };

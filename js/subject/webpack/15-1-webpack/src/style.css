@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Ginerin-Regular";
+  src: url("./Ginerin-Regular.otf");
+  font-weight: 800;
+  font-style: normal;
+}
+
+.hello {
+  color: red;
+  font-family: "Ginerin-Regular";
+  background: url("./icon.png");
+}

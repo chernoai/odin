@@ -1,0 +1,298 @@
+:root {
+  --color1: #8fd14f;
+  --color2: #b4dc8d;
+  --color3: #d1eeb4;
+  --color4: #091909;
+  --color5: #b8e191;
+  --color6: #658e3b;
+  --color7: #fefae0;
+  font-size: 16px;
+}
+
+/* General link styles */
+h1,
+h2,
+h3 {
+  font-family: "Fredoka", sans-serif;
+  font-style: normal;
+}
+
+h1 {
+  color: var(--color3);
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+h2 {
+  color: var(--color6);
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+h3 {
+  color: var(--color7);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+p {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+i,
+p {
+  color: var(--color7);
+}
+img {
+  border: 1px solid var(--color6);
+  box-shadow: 0 0 20px 3px #000;
+}
+.item > img {
+  border: 0;
+  box-shadow: 0 0 0 0;
+}
+/* Content styles */
+#content {
+  background-color: var(--color4);
+}
+#content > * {
+  padding: 1rem;
+}
+/* Header styles */
+header {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  margin-bottom: 3.5rem;
+}
+
+#nav-bar {
+  background-color: var(--color1);
+}
+
+#ul-bar {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+}
+
+li {
+  list-style: none;
+  font-size: 1.8rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+a {
+  color: #000;
+  text-decoration: none;
+  transition: color .3s;
+}
+#ul-bar > li{
+  transition: color .3s;
+}
+#ul-bar > li:hover {
+  text-decoration: underline;
+  color: var(--color6);
+}
+#ul-bar > li:hover a {
+  color: #fefae0aa;
+}
+li:active{
+  transform: scale(.97);
+}
+/* Home section styles */
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0.8rem;
+  background: url("./restaurant-img/background.png") no-repeat center 1rem;
+  background-size: cover;
+}
+
+#home > p {
+  position: relative;
+  color: var(--color2);
+  font-size: 1.5rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+#restaurant-name,
+#slogan,
+#title {
+  position: relative;
+}
+
+#restaurant-name {
+  top: -8rem;
+}
+
+#slogan {
+  top: 13rem;
+}
+
+#title {
+  top: -8rem;
+}
+
+/* Menu section styles */
+#menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0.8rem;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+#menu-box {
+  display: flex;
+  gap: 2rem;
+  width: fit-content;
+  height: 70%;
+}
+.menu-food {
+  border: 2px solid #b8e1911f;
+}
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  justify-items: center;
+  width: 96.6vw;
+  height: 100%;
+  max-height: 350px;
+  margin-top: 1rem;
+  padding: 0.6rem;
+}
+.arrow-buttons {
+  position: absolute;
+  top: 60vh;
+}
+.arrow-buttons:active {
+  transform: scale(0.8);
+}
+.fa-arrow-right {
+  left: 95.8vw;
+}
+.fa-arrow-left {
+  left: 2.5cqmax;
+}
+#right-arrow {
+  user-select: none;
+  font-size: 1.3rem;
+}
+.item {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  align-content: space-between;
+  padding: 0.4rem;
+  width: 23rem;
+  height: 20em;
+  border: 1px solid var(--color6);
+  box-shadow: 0 0 20px 3px #000;
+  transition: all .7s;
+}
+.item:hover {
+  background: var(--color5);
+  transform: scale(0.99);
+  border: 1px solid var(--color7);
+}
+.item:hover * {
+  color: var(--color4);
+}
+.item > img {
+  max-width: 15rem;
+  max-height: 10rem;
+}
+/* About section styles */
+#about {
+  display: flex;
+  flex-direction: column;
+}
+#about-title {
+  margin-top: 40px;
+}
+#about > h1,
+h2 {
+  text-align: center;
+}
+.about-box {
+  border: 2px solid #b8e1911f;
+  margin: 2rem 0;
+}
+#about-us-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1.5rem;
+  gap: 1.6rem;
+}
+.about-text {
+  font-size: 1.3125rem;
+  width: 34.3rem;
+  height: fit-content;
+}
+#first-about-img-row > img {
+  margin: 0 7px;
+  width: 17.3rem;
+}
+
+#rest-img {
+  position: relative;
+  top: 1.25rem;
+}
+#dish-img {
+  position: relative;
+  top: -4.3rem;
+  width: 37.5rem;
+}
+.second-about-text {
+  margin-top: 0.6rem;
+}
+
+#about-loc-container {
+  display: grid;
+  grid-template-areas:
+    "texto texto texto texto"
+    "texto texto texto texto"
+    "contact contact map map"
+    "contact contact map map";
+  padding: 1.5rem;
+}
+
+#about-loc-text {
+  grid-area: texto;
+  font-size: 1.4rem;
+}
+
+#contact {
+  grid-area: contact;
+  margin: 4rem 2rem;
+}
+#contact > h2 {
+  font-size: 2rem;
+}
+#contact-list > li {
+  margin: 0.4rem 0;
+  color: var(--color7);
+}
+#contact-list > li > i {
+  margin: 0 1.5rem;
+  width: 10px;
+  height: 10px;
+}
+#map {
+  grid-area: map;
+  width: 46.8rem;
+  height: 18.75rem;
+  justify-self: end;
+}

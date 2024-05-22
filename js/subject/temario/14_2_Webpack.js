@@ -11,7 +11,7 @@
   //* Inicializa un nuevo proyecto npm con la configuración predeterminada
   //? npm init -y
 
-  //* Instala webpack y webpack-cli como dependencias de desarrollo
+  //* Instala webpack y webpack-cli como dependencias de desarrollo para usar Webpack como tu empaquetador de módulos. 
   //? npm install webpack webpack-cli --save-dev
 
   //Ahora crearemos la siguiente estructura de directorios, archivos y su contenido.

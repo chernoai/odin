@@ -1,0 +1,32 @@
+* {
+  /* Incluye padding y borde en el cálculo del tamaño. */
+  box-sizing: border-box;
+  /* Posicion basada en el padre inmediato y permite ajustes de top/right/bottom/left. */
+  position: relative;
+  /* Previene que los elementos de grid y flex se desborden de su contenedor. */
+  min-width: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+body {
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+ol,
+ul {
+  list-style: none;
+}

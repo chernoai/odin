@@ -7,9 +7,10 @@ const h1Title = document.querySelector('#title')
 const pAuthor = document.querySelector('#author')
 const pPages = document.querySelector('#pages')
 const pRead = document.querySelector('#read')
+
 if (pRead.textContent.includes("Si")) {
   read = true
-}else{
+} else {
   read = false
 
 }
@@ -32,12 +33,18 @@ newBtn.addEventListener('click', function () {
     const readInput = document.createElement("input")
     const addBtn = document.createElement("button")
 
-    titleInput.setAttribute('for', 'title_input')
+    titleLabel.setAttribute('for', 'title_input')
     titleInput.setAttribute('id', 'title_input')
+    titleInput.setAttribute('required', "")
+    titleInput.setAttribute('type', 'text')
     authorLabel.setAttribute('for', 'autor_input')
     authorInput.setAttribute('id', 'autor_input')
+    authorInput.setAttribute('required', "")
+    authorInput.setAttribute('type', 'text')
     pagesLabel.setAttribute('for', 'pages_input')
     pagesInput.setAttribute('id', 'pages_input')
+    pagesInput.setAttribute('required', "")
+    pagesInput.setAttribute('type', 'text')
     addBtn.setAttribute('id', 'add_btn')
     addBtn.setAttribute('type', 'button')
     readInput.setAttribute('type', 'checkbox')
@@ -65,7 +72,26 @@ newBtn.addEventListener('click', function () {
 
     bookDetails.appendChild(readLabel)
     bookDetails.appendChild(readInput)
+    const inputs = document.querySelectorAll('input[type="text"]');
 
+    if (!titleInput.checkValidity()) { addBtn.setAttribute("disabled", "") }
+    if (pagesInput.checkValidity()) { }
+    if (authorInput.checkValidity()) { }
+
+    let arrayCheck = []
+
+    inputs.forEach(input => {
+      arrayCheck.push(input.checkValidity())
+      input.addEventListener("change", () => {
+        arrayCheck.shift()
+        arrayCheck.push(input.checkValidity())
+
+        let [titleInputCheck, authorInputCheck, pagesInputCheck] = arrayCheck
+        if (titleInputCheck && authorInputCheck && pagesInputCheck) {
+          addBtn.removeAttribute("disabled")
+        }
+      })
+    });
 
     addBtn.addEventListener('click', function () {
       const isChecked = readInput.checked;
@@ -90,10 +116,8 @@ newBtn.addEventListener('click', function () {
       bookDiv.appendChild(pAuthor)
 
       const pPages = document.createElement('p')
-      pPages.textContent = `${pagesLabel.textContent}  ${newBook.pages}`
+      pPages.textContent = `${pagesLabel.textContent}  ${newBook.pages.replace(/\D/g, '')}`
       bookDiv.appendChild(pPages)
-
-      console.log(newBook.read);
 
       const pRead = document.createElement('p')
       if (newBook.read) {
@@ -130,6 +154,8 @@ newBtn.addEventListener('click', function () {
     });
   }
   added = true;
+
+
 });
 
 
@@ -140,14 +166,14 @@ function Book(title, author, pages, read) {
   this.read = read
 }
 
-const newBook = new Book (h1Title.textContent, pAuthor.textContent, pPages.textContent, read)
+const newBook = new Book(h1Title.textContent, pAuthor.textContent, pPages.textContent, read)
 
-removeBook.addEventListener("click", function (e) {
+removeBook.addEventListener("click", function () {
   const parent = removeBook.parentNode
   container.removeChild(parent)
 })
 
-toggle.addEventListener("click", function (e) {
+toggle.addEventListener("click", function () {
   if (newBook.read) {
     pRead.textContent = "Leido: No"
     newBook.read = false
@@ -156,3 +182,4 @@ toggle.addEventListener("click", function (e) {
     newBook.read = true
   }
 })
+

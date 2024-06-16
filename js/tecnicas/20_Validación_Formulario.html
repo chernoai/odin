@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario con Validación</title>
+  <link rel="stylesheet" href="./20_Validación_Formulario.css">
+</head>
+
+<body>
+  <div id="container">
+    <h2>Formulario de Registro</h2>
+
+    <form id="form" novalidate>
+      <label for="pais">País:</label>
+      <select id="pais" name="pais" required>
+        <option value="">Selecciona un país</option>
+        <option value="uk">Reino Unido</option>
+        <option value="es">España</option>
+        <option value="ie">Irlanda</option>
+      </select>
+      <span class="error" id="paisError"></span>
+
+      <label for="codigoPostal">Codigo Postal</label>
+      <input id="codigoPostal" type="text" required>
+      <span class="error" id="cpError"></span>
+
+      <label for="email">Corre Electrónico</label>
+      <input id="email" type="email" required>
+      <span class="error" id="emailError"></span>
+
+      <label for="password">Contraseña</label>
+      <input id="password" type="password" required>
+      <span class="error" id="passwordError"></span>
+
+      <label for="passwordCon">Confirmacion de la Contraseña</label>
+      <input id="passwordCon" type="password" required>
+      <span class="error" id="passwordConError"></span>
+
+      <span class="successful" id="successful"></span>
+      <button id="btn" type="button">Enviar</button>
+    </form>
+  </div> 
+  <script src="./20_Validación_Formulario.js"></script>
+</body>
+
+</html>

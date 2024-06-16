@@ -27,6 +27,7 @@ button:active {
 }
 input {
   border: 1px solid #000;
+  margin: 5px 0;
 }
 form {
   padding: 13px;
